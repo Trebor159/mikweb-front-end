@@ -27,8 +27,19 @@ api.interceptors.response.use((response) => response, (error) => {
 // ─── Funções de chamada à API ──────────────────────────────
 export const authService = {
     async login(cpf, senha) {
-        const { data } = await api.post('/api/auth/login', { cpf, senha });
-        return data;
+        if (cpf === '12345678900' && senha === '123456') {
+            return {
+                token: 'token-fake',
+                cliente: {
+                    id: '1',
+                    nome: 'Robert Santos',
+                    cpf: '12345678900',
+                    email: 'teste@teste.com',
+                    celular: '(98) 99999-9999',
+                },
+            };
+        }
+        throw new Error('CPF ou senha inválidos');
     },
 };
 export const faturaService = {

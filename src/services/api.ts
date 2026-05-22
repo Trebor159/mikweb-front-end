@@ -72,8 +72,21 @@ export interface StatusConexao {
 
 export const authService = {
   async login(cpf: string, senha: string) {
-    const { data } = await api.post('/api/auth/login', { cpf, senha })
-    return data as { token: string; cliente: Usuario }
+
+    if (cpf === '12345678900' && senha === '123456') {
+      return {
+        token: 'token-fake',
+        cliente: {
+          id: '1',
+          nome: 'Robert Santos',
+          cpf: '12345678900',
+          email: 'teste@teste.com',
+          celular: '(98) 99999-9999',
+        },
+      }
+    }
+
+    throw new Error('CPF ou senha inválidos')
   },
 }
 
