@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom'
 import { FileText, Wifi, TrendingUp, ChevronRight, AlertTriangle } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useApi } from '../hooks/useApi'
-import { faturaService, conexaoService } from '../services/api'
+import { conexaoService } from '../services/api'
 import { StatusBadge } from '../components/ui/StatusBadge'
 import { PageLoader } from '../components/ui/Spinner'
-import { Alert } from '../components/ui/Alert'
 
 // Formata valor em R$
 function formatarMoeda(valor: number) {
