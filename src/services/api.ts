@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Cria a instância do Axios apontando para o backend no Railway
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? 'http://localhost:3000',
+  baseURL: 'http://localhost:3000',
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' },
 })

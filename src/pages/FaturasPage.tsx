@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FileText, Copy, QrCode, ExternalLink, Check } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
-import { faturaService, Fatura, FaturaDetalhe } from '../services/api'
+import { faturaService, FaturaDetalhe } from '../services/api'
 import { StatusBadge } from '../components/ui/StatusBadge'
 import { PageLoader, Spinner } from '../components/ui/Spinner'
 import { Alert } from '../components/ui/Alert'
